@@ -1,12 +1,3 @@
-"""
-Usage:
-  # From tensorflow/models/
-  # Create train data:
-  python3 scripts/generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=data/train.record
-
-  # Create test data:
-  python3 scripts/generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=data/test.record
-"""
 from __future__ import division
 from __future__ import print_function
 from __future__ import absolute_import
@@ -29,7 +20,7 @@ FLAGS = flags.FLAGS
 
 # TO-DO replace this with label map
 def class_text_to_int(row_label):
-    if row_label == 'sheep':
+    if row_label.lower() == 'sheep':
         return 1
     else:
         None
